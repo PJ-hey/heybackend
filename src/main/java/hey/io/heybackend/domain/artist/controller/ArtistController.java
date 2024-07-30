@@ -58,55 +58,55 @@ public class ArtistController {
         return SuccessResponse.of(artistService.searchArtists(keyword, size, page, direction)).asHttp(HttpStatus.OK);
     }
 
-//    @Operation(summary = "Get Albums", description = "Get Albums API")
-//    @ApiResponses(value = {
-//            @ApiResponse(
-//                    responseCode = "200"),
-//            @ApiResponse(
-//                    responseCode = "404",
-//                    description = "U001 : 회원을 찾을 수 없습니다",
-//                    content = @Content(schema = @Schema(hidden = true))),
-//            @ApiResponse(
-//                    responseCode = "404",
-//                    description = "AR001: 아티스트를 찾을 수 없습니다.",
-//                    content = @Content(schema = @Schema(hidden = true))),
-//    })
-//    @GetMapping("/{id}/albums")
-//    public ResponseEntity<SuccessResponse<SliceResponse<AlbumResponse>>> getAlbums(@PathVariable("id") String artistId,
-//                                                                                   @RequestParam(value = "size", required = false, defaultValue = "20") int size,
-//                                                                                   @RequestParam(value = "page", required = false, defaultValue = "0") int page,
-//                                                                                   @RequestParam(name = "direction", required = false, defaultValue = "DESC") Sort.Direction direction) {
-//        return SuccessResponse.of(artistService.getAlbums(artistId, size, page, direction)).asHttp(HttpStatus.OK);
-//    }
-//
-//    @Operation(summary = "Get Artist`s Performances", description = "Get Artist`s Performances API")
-//    @ApiResponses(value = {
-//            @ApiResponse(
-//                    responseCode = "200"),
-//            @ApiResponse(
-//                    responseCode = "404",
-//                    description = "U001 : 회원을 찾을 수 없습니다",
-//                    content = @Content(schema = @Schema(hidden = true))),
-//            @ApiResponse(
-//                    responseCode = "404",
-//                    description = "AR001: 아티스트를 찾을 수 없습니다.",
-//                    content = @Content(schema = @Schema(hidden = true))),
-//    })
-//    @GetMapping("/{id}/performances")
-//    public ResponseEntity<SuccessResponse<SliceResponse<PerformanceResponse>>> getArtistPerformances(@PathVariable("id") String artistId,
-//                                                                                                     @RequestParam(value = "size", required = false, defaultValue = "20") int size,
-//                                                                                                     @RequestParam(value = "page", required = false, defaultValue = "0") int page,
-//                                                                                                     @RequestParam(name = "direction", required = false, defaultValue = "DESC") Sort.Direction direction) {
-//        return SuccessResponse.of(artistService.getArtistPerformances(artistId, size, page, direction)).asHttp(HttpStatus.OK);
-//    }
-//
-//    @Operation(summary = "Get Artist`s Performances", description = "Get Artist`s Performances API")
-//    @ApiResponses(value = {
-//            @ApiResponse(
-//                    responseCode = "200")
-//    })
-//    @GetMapping("/rank")
-//    public ResponseEntity<SuccessResponse<List<ArtistListResponse>>> getArtistRank() {
-//        return SuccessResponse.of(artistService.getArtistRank()).asHttp(HttpStatus.OK);
-//    }
+    @Operation(summary = "Get Albums", description = "Get Albums API")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200"),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "U001 : 회원을 찾을 수 없습니다",
+                    content = @Content(schema = @Schema(hidden = true))),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "AR001: 아티스트를 찾을 수 없습니다.",
+                    content = @Content(schema = @Schema(hidden = true))),
+    })
+    @GetMapping("/{id}/albums")
+    public ResponseEntity<SuccessResponse<SliceResponse<AlbumResponse>>> getAlbums(@PathVariable("id") String artistId,
+                                                                                   @RequestParam(value = "size", required = false, defaultValue = "20") int size,
+                                                                                   @RequestParam(value = "page", required = false, defaultValue = "0") int page,
+                                                                                   @RequestParam(name = "direction", required = false, defaultValue = "DESC") Sort.Direction direction) {
+        return SuccessResponse.of(artistService.getAlbums(artistId, size, page, direction)).asHttp(HttpStatus.OK);
+    }
+
+    @Operation(summary = "Get Artist`s Performances", description = "Get Artist`s Performances API")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200"),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "U001 : 회원을 찾을 수 없습니다",
+                    content = @Content(schema = @Schema(hidden = true))),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "AR001: 아티스트를 찾을 수 없습니다.",
+                    content = @Content(schema = @Schema(hidden = true))),
+    })
+    @GetMapping("/{id}/performances")
+    public ResponseEntity<SuccessResponse<SliceResponse<PerformanceResponse>>> getArtistPerformances(@PathVariable("id") String artistId,
+                                                                                                     @RequestParam(value = "size", required = false, defaultValue = "20") int size,
+                                                                                                     @RequestParam(value = "page", required = false, defaultValue = "0") int page,
+                                                                                                     @RequestParam(name = "direction", required = false, defaultValue = "DESC") Sort.Direction direction) {
+        return SuccessResponse.of(artistService.getArtistPerformances(artistId, size, page, direction)).asHttp(HttpStatus.OK);
+    }
+
+    @Operation(summary = "Get Artist`s Performances", description = "Get Artist`s Performances API")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200")
+    })
+    @GetMapping("/rank")
+    public ResponseEntity<SuccessResponse<List<ArtistListResponse>>> getArtistRank() {
+        return SuccessResponse.of(artistService.getArtistRank()).asHttp(HttpStatus.OK);
+    }
 }
