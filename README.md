@@ -53,7 +53,7 @@
 
 프로젝트를 경험하면서 알게된 지식, 경험을 정리한 위키입니다.
 
-[프로젝트 위키](/docs/dev_wiki.md)
+![프로젝트 위키](https://few-monkey-6ee.notion.site/0ddf3035c24c44bfa31554458e89358e?v=77eea0b5d72944e5872fb96ec575d1af)
 
 ## 패키지 구조
 
@@ -62,10 +62,7 @@
 ## Kopis, Spotify API 플로우
 
 공연 정보를 생성하는 Kopis API, 아티스트 정보를 생성하는 Spotify API로 구성되어 있습니다.
-
-![KOPIS API 플로우](https://github.com/user-attachments/assets/c0cf2a1c-39ad-466a-8aa1-6a86a67d3690)
-
-![SPOTIFY API 플로우](https://github.com/user-attachments/assets/c86c2863-1020-46a5-b12a-88a8a694dda0)
+![Kopis, Spotify API](https://github.com/user-attachments/assets/6f23513b-d658-493a-82af-04d84275a38a)
 
 ## 컨벤션과 협업 전략
 
