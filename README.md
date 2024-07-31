@@ -53,7 +53,7 @@
 
 프로젝트를 경험하면서 알게된 지식, 경험을 정리한 위키입니다.
 
-![프로젝트 위키](https://few-monkey-6ee.notion.site/0ddf3035c24c44bfa31554458e89358e?v=77eea0b5d72944e5872fb96ec575d1af)
+[프로젝트 위키](https://few-monkey-6ee.notion.site/0ddf3035c24c44bfa31554458e89358e?v=77eea0b5d72944e5872fb96ec575d1af)
 
 ## 패키지 구조
 
