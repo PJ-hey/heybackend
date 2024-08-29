@@ -40,7 +40,7 @@ oauth2:
     token-uri: https://oauth2.googleapis.com/token
     user-info-url: https://www.googleapis.com/oauth2/v3/userinfo
     redirect-uri: http://localhost:8080/login/oauth2/code/google
-    delete-account-url: ${GOOGLE_DELETE_ACCOUNT_URL}
+    delete-account-url : https://oauth2.googleapis.com/revoke
 
   apple:
     ios:

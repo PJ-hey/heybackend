@@ -39,7 +39,6 @@ public class KakaoOAuthService {
     private final UserService userService;
     private final ValidateUserService validateUserService;
     private final JwtTokenProvider jwtTokenProvider;
-    private final AuthRepository authRepository;
 
     @Transactional
     public ResponseJwtToken login(HttpServletRequest request) {
