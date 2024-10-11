@@ -14,9 +14,11 @@ import hey.io.heybackend.domain.oauth.properties.GoogleProperties;
 import hey.io.heybackend.domain.oauth.repository.AuthRepository;
 import hey.io.heybackend.domain.user.domain.SocialCode;
 import hey.io.heybackend.domain.user.domain.User;
+import hey.io.heybackend.domain.user.domain.UserRole;
 import hey.io.heybackend.domain.user.service.UserService;
 import hey.io.heybackend.domain.user.service.ValidateUserService;
 import jakarta.servlet.http.HttpServletRequest;
+import java.security.SecureRandom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -45,16 +47,22 @@ public class GoogleOAuthService {
     public ResponseJwtToken login(HttpServletRequest request) {
         OAuthAccessToken accessToken = getAccessToken(request);
 
-        OAuthUserProfile oAuthUserProfile = getUserProfile(accessToken);
+//        OAuthUserProfile oAuthUserProfile = getUserProfile(accessToken);
+//
+//        User user = validateUserService.validateRegisteredUserByEmail(oAuthUserProfile.getEmail(), SocialCode.GOOGLE);
+//
+//        if (user == null) {
+//            user = userService.registerGoogleUser(oAuthUserProfile.getEmail(), SocialCode.GOOGLE, accessToken.getRefreshToken());
+//        }
+//
+//        String jwtAccessToken = jwtTokenProvider.createAccessToken(user.getUserId(), user.getUserRole());
+//        String jwtRefreshToken = jwtTokenProvider.createRefreshToken(user.getUserId(), user.getUserRole());
 
-        User user = validateUserService.validateRegisteredUserByEmail(oAuthUserProfile.getEmail(), SocialCode.GOOGLE);
-
-        if (user == null) {
-            user = userService.registerGoogleUser(oAuthUserProfile.getEmail(), SocialCode.GOOGLE, accessToken.getRefreshToken());
-        }
-
-        String jwtAccessToken = jwtTokenProvider.createAccessToken(user.getUserId(), user.getUserRole());
-        String jwtRefreshToken = jwtTokenProvider.createRefreshToken(user.getUserId(), user.getUserRole());
+        // 우선 DB 연동 없이 access token 생성
+        long userId = 10000000 + new SecureRandom().nextInt(90000000);
+        UserRole userRole = UserRole.USER;
+        String jwtAccessToken = jwtTokenProvider.createAccessToken(userId, userRole);
+        String jwtRefreshToken = jwtTokenProvider.createRefreshToken(userId, userRole);
 
         return ResponseJwtToken.of(jwtAccessToken, jwtRefreshToken);
     }
